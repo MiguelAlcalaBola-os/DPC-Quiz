@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .contenedor{
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+         
+        
+        .centrado{
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: aliceblue;
+            text-shadow: 4px 4px 5px black;
+        }
+        </style>
+<head>
+    <title>Novedades</title>
+
+<body>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        
+        <title>DPC-Quiz | Novedades</title>
+          <link rel="icon" type="image/png" href="ico/logo.png">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <body style="background-image: url(resources/img18.png)">
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><span style="color: #4eefe2; font-size: 24px;" >|DPC-Quiz|</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                  
+                        <li class="nav-item">
+                            <a class="nav-link" href="novedades.html"><span style="color: #5aefe2; ; font-size: 24px;" >|Novedades|</span></a>
+                            
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="como_funciona.html"><span style="color: #5aefe2; font-size: 24px;">|¿Cómo funciona?|</span></a>
+                          </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="terminosdeuso.html" data-bs-toggle="modal" data-bs-target="#singinmodal"><span
+                                    style="color: #5aefe2; font-size: 24px;">|Ingresar|</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+        <!-- Modal -->
+        <div class="modal fade" id="singinmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Por favor, acceda con su cuenta de Google</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="signin-form">
+                            <div class="form-gropu">
+                                <button id="login" type="button" class="btn btn-primary"
+                                    data-bs-dismiss="button">Acceder con
+                                    Google</button>
+
+                            </div>
+                            <div class="form-gropu">
+                                <br>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+
+        <!--DPC Body-->
+
+       
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+            import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyCR4bO6XCrtoJoTG-77PrnUFtF-RF87m-M",
+                authDomain: "dpc-quizbd.firebaseapp.com",
+                projectId: "dpc-quizbd",
+                storageBucket: "dpc-quizbd.appspot.com",
+                messagingSenderId: "584535024565",
+                appId: "1:584535024565:web:87fa0fdf38a5c8408baffc",
+                measurementId: "G-8Z6YEGWWVQ"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const auth = getAuth(app);
+            const provider = new GoogleAuthProvider(app);
+            document.getElementById("login").addEventListener('click', function () {
+
+                signInWithRedirect(auth, provider);
+            })
+
+
+            getRedirectResult(auth)
+                .then((result) => {
+                    // This gives you a Google Access Token. You can use it to access Google APIs.
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+
+                    // The signed-in user info.
+                    const user = result.user;
+                    console.log("logeado")
+                    // Changue of Pague with LOG IN   
+                    location.href="terminosdeuso.html";
+                }).catch((error) => {
+                    // Handle Errors here.
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // The email of the user's account used.
+
+                    // The AuthCredential type that was used.
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+                    // ...
+                    console.log("error")
+                });
+        </script>
+        <div id="banner" class="contenedor">
+    
+            <img src="resources/banner3.jpg" id="img_banner" style="width: 1520px; height: 300px;">
+            <br>
+            <div class="centrado"> <h1>Mira lo que te ofrece DPC-Quiz</h1></div>
+            <br><br>
+          
+        </div>
+      
+        <br><br>
+        <h4 style="margin: 15px; padding: 10px; color: rgb(67, 67, 67)">DPC-Quiz es una plataforma para que los niños y jóvenes puedan disfrutar de una experiencia completa y educativa de realimentación sobre temas que serán determinados por cada docente que acceda al sitio. Esta aplicación Web cuenta con una interfaz amistosa, para que los estudiantes y docentes puedan interactuar de la manera más rápida y cómoda posible. El usuario puede acceder por medio de un botón, mediante la validación de una cuenta con el proveedor de Google, para que posteriormente cree su perfil, ya sea como docente o estudiante.</h4>
+        <br>
+        
+        <h4 style="margin: 15px; padding: 10px; color: rgb(67, 67, 67)">Con esta plataforma los docentes podrán crear Diagramas de Pensamiento Creativo de tipo puzles; asimismo Quiziz gamificados, los cuales serán compartidos con el alumnado y estos los podrán responder en tiempo real. Cuenta con un sistema de puntuación interactivo, para que los estudiantes puedan conocer su propia evolución; motivándolos para mejorar su propio ranking, y de esta manera fomentar una sana competitividad. 
+        </h4>
+        <br>
+       
+        <h4 style="margin: 15px; padding: 10px;  color: rgb(67, 67, 67)">La plataforma DPC-Quiz es una nueva e innovadora aplicación web la cual le permite a docentes poder comprobar de manera fácil e interactiva el conocimiento de los alumnos a través de cuestionarios interactivos que están orientados a cualquier tema de aprendizaje que un docente quiera impartir, adicionalmente nuestra plataforma incluye un diagrama muy agradable y personalizable de mapas mentales, todo para que los docentes puedan exolicar, mostrar o comprobar los conocimientos de sus estudiantes con métodos Gamificados y altamente interactivos para niños y jóvenes.</h4>
+        
+
+        <br><br><br><br>
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-dark text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <div class="me-5 d-none d-lg-block">
+      <center><span>DPC-Quiz</span></center>
+    
+    </div>
+   
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <br><br>
+            <i class="fas fa-gem me-3"></i>DPC-QUIZ
+          </h6>
+          <p>
+            Facilita tu trabajo como educador con esta práctica y sencilla herramienta de enseñanza.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Página
+          </h6>
+          <p>
+            <a href="index.html" class="text-reset">Inicio</a>
+          </p>
+          <p>
+            <a href="novedades.html" class="text-reset">Novedades</a>
+          </p>
+          <p>
+            <a href="como_funciona.html" class="text-reset">¿Cómo Funciona?</a>
+          </p>
+          <p>
+            <a href="terminosdeuso.html" data-bs-toggle="modal" data-bs-target="#singinmodal"class="text-reset">Acceder</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+    
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contactos</h6>
+          <p><i class=""></i>Puede enviarnos cualquier queja o sugerencia que tenga</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            dpcquizpanama@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> +507 6276-6518 </p>
+          <p><i class="fas fa-print me-3"></i> +507 6323-3190 </p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2022
+    <a class="text-reset fw-bold">DPC-QUIZ</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+        
+
+    </body>
+    </head>
+
+    </html>
+</body>
+</head>
+
+</html>
