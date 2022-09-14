@@ -312,7 +312,7 @@ class MindMap {
     // watermark:
     textSize(13);
     fill("grey");
-    text("EBGV Developer", canvasWidth - 90, canvasHeight - 15);
+    text("Miguel Bolaños", canvasWidth - 90, canvasHeight - 15);
   }
 
   onMouseDragged(i) {

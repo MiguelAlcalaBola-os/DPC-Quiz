@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="icon" type="image/png" href="ico/logo.png">
     <meta charset="utf-8" />
 </head>
 
@@ -16,7 +17,7 @@
     <div class="container">
 
         <nav class="navbar bg-primary text-white my-1 mx-n3 rounded">
-            <a href="http://127.0.0.1/cuestionario/index3.php" class="navbar-brand text-reset h4">Ir al inicio</a>
+            <a href="http://127.0.0.1/cuestionario/index2.php" class="navbar-brand text-reset h4">Ir al inicio</a>
             <div class="form-inline">
                 <button id="new-mind-map-btn" class="btn btn-outline-light rounded ml-3"><i class="bi bi-file-earmark-plus"></i></button>
                 <button id="save-btn" class="btn btn-outline-light rounded ml-3"><i class="bi bi-bookmark"></i></button>
@@ -56,7 +57,7 @@
 
             <!-- KEYWORD SETTING BAR -->
             <div class="col bg-secondary border border-secondary mr-1">
-                <h5 class="my-3 text-white">Configuraciones</h5>
+                <h5 class="my-3 text-white">Ajustes de recuadros</h5>
                 <div class="form-group">
                     <select id="settings-for-select" class="custom-select my-2" value="keyword">
                         <option>keyword</option>
@@ -71,6 +72,13 @@
 
                     </select>
 
+                    
+                    <input id="color-picker" type="color" class="input my-2">
+                    <!--<button id="save-changes-btn" class="btn btn-primary my-2 d-block">save changes</button>-->
+                    <button id="delete-keyword-btn" class="btn btn-danger my-2 d-block">Eliminar Recuadro</button>
+
+
+                    <h5 class="my-3 text-white">Fondo de plantilla</h5>
                     <div class="input-group">
                         <select id="select-imagen" class="custom-select form-control ">
                             <option>Elegir Fondo</option>
@@ -81,23 +89,29 @@
                             <option>fondo 5</option>
                         </select>
                         <button id="selectfon" class="btn btn-success" type="button">Elegir</button>
-
                     </div>
-
-                    <div>
-                        <button id="btn-1">1</button>
+                    <h5 class="my-3 text-white">Fondo de Página</h5>
+                    <div class ="input-group">
+                        <button id="btn-1">1</buttom>
                         <button id="btn-2">2</button>
                         <button id="btn-3">3</button>
                         <button id="btn-4">4</button>
                         <button id="btn-5">5</button>
+                        <button id="btn-6">6</buttom>
+                        <button id="btn-7">7</button>
+                        <button id="btn-8">8</button>
+                        <button id="btn-9">9</button>
+                        <button id="btn-10">10</button>
+                        <button id="btn-11">11</buttom>
+                        <button id="btn-12">12</button>
+                        <button id="btn-13">13</button>
+                        <button id="btn-14">14</button>
+                        <button id="btn-15">15</button>
+                 
+                        <script src="script.js"></script>
                     </div>
                     
-    <script src="script.js"></script>
-                    <input id="color-picker" type="color" class="input my-2">
-                    <!--<button id="save-changes-btn" class="btn btn-primary my-2 d-block">save changes</button>-->
-                    <button id="delete-keyword-btn" class="btn btn-danger my-2 d-block">Eliminar Recuadro</button>
-
-
+  
                 </div>
             </div> <!-- the end of aside navbar col -->
 

@@ -13,7 +13,7 @@ require_once './configs/dbconnect.php';
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Encuesta</title>
     <link rel="shortcut icon" href="images/1.png">
-
+    <link rel="icon" type="image/png" href="ico/logo.png">
     <link rel="stylesheet" href="css/estilos.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

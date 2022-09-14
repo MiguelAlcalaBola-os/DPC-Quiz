@@ -9,11 +9,12 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="ico/logo.png">
 </head>
 
 <body style="background-color: rgb(39, 37, 37);">
 
-    <div class="container">
+    <div class="container"> 
 
         <nav class="navbar bg-primary text-white my-1 mx-n3 rounded">
             <a href="http://127.0.0.1/cuestionario/index2.php" class="navbar-brand text-reset h4">Ir al inicio</a>
@@ -101,11 +102,11 @@
                         <button id="btn-8">8</button>
                         <button id="btn-9">9</button>
                         <button id="btn-10">10</button>
-                        <button id="btn-1">11</buttom>
-                        <button id="btn-2">12</button>
-                        <button id="btn-3">13</button>
-                        <button id="btn-4">14</button>
-                        <button id="btn-5">15</button>
+                        <button id="btn-11">11</buttom>
+                        <button id="btn-12">12</button>
+                        <button id="btn-13">13</button>
+                        <button id="btn-14">14</button>
+                        <button id="btn-15">15</button>
                  
                         <script src="script.js"></script>
                     </div>
