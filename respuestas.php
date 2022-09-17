@@ -211,7 +211,7 @@ if ($row = mysqli_fetch_array($query)) {
 	<br><br>
 
 <p class="text2" style="text-align:left;"> <a style= "color:#ff0000">(*)</a> <a style= "color:#000000" >Campos obligatorios</a> </p><br><br>
-	<a href="index.php"><button style = "position:absolute; left:140px; top:90px;" class="btn btn-sm btn-danger">Regresar</button></a>
+	<a href="index2.php"><button style = "position:absolute; left:140px; top:90px;" class="btn btn-sm btn-danger">Regresar</button></a>
 	<br><br><br>
 	<form action="" method="post" enctype="multipart/form-data" id="formulario">
 		<div class="container">

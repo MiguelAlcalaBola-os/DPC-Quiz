@@ -17,7 +17,7 @@
     <div class="container">
 
         <nav class="navbar bg-primary text-white my-1 mx-n3 rounded">
-            <a href="http://127.0.0.1/cuestionario/index2.php" class="navbar-brand text-reset h4">Ir al inicio</a>
+            <a href="index3.php" class="navbar-brand text-reset h4">Ir al inicio</a>
             <div class="form-inline">
                 <button id="new-mind-map-btn" class="btn btn-outline-light rounded ml-3"><i class="bi bi-file-earmark-plus"></i></button>
                 <button id="save-btn" class="btn btn-outline-light rounded ml-3"><i class="bi bi-bookmark"></i></button>

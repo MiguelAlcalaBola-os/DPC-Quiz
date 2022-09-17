@@ -3,7 +3,7 @@
 
 <head>
 	<script>
-		location.href = "./cuestionario_dashboard/index.php?p=respuestas_indice";
+		location.href = "./cuestionario_dashboard/dashboard_do.php?p=respuestas_indice";
 	</script>
 </head>
 
